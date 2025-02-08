@@ -3,14 +3,14 @@
  * Created Date: Tuesday February 4th 2025 12:08:37
  * Author: ristoxxx@github.com
  * -----
- * Last Modified: Saturday February 8th 2025 01:43:02
+ * Last Modified: Saturday February 8th 2025 02:02:47
  * Modified By: ristoxxx@github.com
  * -----
  * Copyright (c) 2025 ristoxxx@github.com
  */
-import express from 'express'
-import cors from 'cors'
-import RSSParser from 'rss-parser'
+const express = require('express');
+const cors = require('cors');
+const RSSParser = require('rss-parser');
 
 
 const feedUrl = 'https://feeds.yle.fi/uutiset/v1/majorHeadlines/YLE_UUTISET.rss'
@@ -36,9 +36,12 @@ app.get('/articles', (req, res) => {
     res.json(articles);
 });
 
-const server = app.listen("4000", () => {
-    console.log("Server is running on ort 4000");
-})
-
+// const server = app.listen("4000", () => {
+//     console.log("Server is running on ort 4000");
+// })
+const port = process.env.PORT || 4000;
+const server = app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
 export default server;
 //hello
