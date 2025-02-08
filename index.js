@@ -1,6 +1,9 @@
 const express = require('express');
 const RSSParser = require('rss-parser');
+const cors = require('cors');
 const app = express();
+
+app.use(cors());
 const PORT = 4000;
 
 const feedUrl = 'https://feeds.yle.fi/uutiset/v1/majorHeadlines/YLE_UUTISET.rss';
