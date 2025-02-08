@@ -23,8 +23,12 @@ async function fetchFeed() {
 
 fetchFeed();
 
+app.get('/articles', (req, res) => {
+  res.status(200).json(articles);
+});
+
 app.get('/home', (req, res) => {
-  res.status(200).json('Welcome, your app is working well');
+  res.status(200).json('Welcome, your app is maybe working well');
 });
 
 app.listen(PORT, () => {
