@@ -33,7 +33,7 @@ app.get('/home', (req, res) => {
     res.status(200).json('Welcome, your app is working well');
   });
 
-const port = process.env.PORT || 4000;
+const port = 4004;
 const server = app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
