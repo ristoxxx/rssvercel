@@ -27,7 +27,7 @@ async function fetchFeed() {
 fetchFeed();
 
 app.get('/articles', (req, res) => {
-  res.status(200).json(articles);
+  res.status(200).json('What!?');
 });
 
 app.get('/home', (req, res) => {
