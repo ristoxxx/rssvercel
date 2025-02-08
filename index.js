@@ -21,14 +21,17 @@ async function fetchFeed() {
 }
 
 // Fetch the feed at startup
-fetchFeed();
+//fetchFeed();
 
 const app = express();
 app.use(cors());
 
-app.get('/articles', (req, res) => {
-    res.json(articles);
-});
+// app.get('/articles', (req, res) => {
+//     res.json(articles);
+// });
+app.get('/home', (req, res) => {
+    res.status(200).json('Welcome, your app is working well');
+  });
 
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
